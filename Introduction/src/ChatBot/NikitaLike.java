@@ -25,7 +25,7 @@ public class NikitaLike implements Topic {
 		if(NikitaMain.findKeyword(userInput, "like", 0) >= 0){
 			return true;
 		}
-		return false;
+		return false; 
 	}
 
 }

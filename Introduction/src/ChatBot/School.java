@@ -20,4 +20,14 @@ public class School implements Topic {
 		}
 	}
 
+	public boolean isTriggered(String userInput) {
+		if(NikitaMain.findKeyword(userInput, "school", 0) >= 0){
+			return true;
+		}
+		if(NikitaMain.findKeyword(userInput, "class", 0) >= 0){
+			return true;
+		}
+		return false;
+	}
+
 }

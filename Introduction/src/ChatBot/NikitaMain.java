@@ -11,6 +11,7 @@ public class NikitaMain {
 	static String response;
 	static Topic school;
 	static Topic like;
+	static Topic hello;
 	
 	public static void main(String[] args) {
 		createTopics();
@@ -35,11 +36,15 @@ public class NikitaMain {
 			}
 			else if(findKeyword(response, "like", 0) >= 0){
 				inLoop = false; //exit this loop
-				school.talk();
+				like.talk();
 			}
 			else if(findKeyword(response, "school", 0) >= 0){
 				inLoop = false; //exit this loop
 				school.talk();
+			}
+			else if(findKeyword(response, "hello", 0) >= 0){
+				inLoop = false; //exit this loop
+				hello.talk();
 			}
 			else{
 				print("I'm sorry, I don't understand you.");
@@ -159,6 +164,7 @@ public class NikitaMain {
 		input = new Scanner(System.in);
 		school = new School();
 		like = new NikitaLike();
+		hello = new NikitaHello();
 	}
 
 }

@@ -7,7 +7,7 @@ public class ArraysMain {
 		
 		int[] array = new int[50];
 		
-		ArrayExercise.populateDiceRolls(array);
+		ArrayExercise.listDeck();
 		ArrayExercise.print(array);
 //		
 //		SampleElement sample = new SampleElement(10);

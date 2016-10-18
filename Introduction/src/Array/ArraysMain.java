@@ -5,21 +5,26 @@ public class ArraysMain {
 	public static void main(String[] args) {
 		long startTime = System.currentTimeMillis();
 		
-		SampleElement sample = new SampleElement(10);
-		sample.increase();
-		System.out.println("The sample element has a number equal to " + sample.getNumber());
+		int[] array = new int[50];
 		
-		String[] someStrings = new String[100];
-		populateArray(someStrings);
-		
-		//in this method we pass the ELEMENT (a var), not the array, so no change will be made.
-		System.out.println("Before " + someStrings[99]);
-		changeString(someStrings[99]);
-		System.out.println("After \"changeString\" method value " + someStrings[99]);
-		changeArray(someStrings);
-		System.out.println("After \"changeArray\" method value " + someStrings[99]);
-		changeArrayElement(someStrings, 99);
-		System.out.println("After \"changeArrayElement\" method value " + someStrings[99]);
+		ArrayExercise.populateDiceRolls(array);
+		ArrayExercise.print(array);
+//		
+//		SampleElement sample = new SampleElement(10);
+//		sample.increase();
+//		System.out.println("The sample element has a number equal to " + sample.getNumber());
+//		
+//		String[] someStrings = new String[100];
+//		populateArray(someStrings);
+//		
+//		//in this method we pass the ELEMENT (a var), not the array, so no change will be made.
+//		System.out.println("Before " + someStrings[99]);
+//		changeString(someStrings[99]);
+//		System.out.println("After \"changeString\" method value " + someStrings[99]);
+//		changeArray(someStrings);
+//		System.out.println("After \"changeArray\" method value " + someStrings[99]);
+//		changeArrayElement(someStrings, 99);
+//		System.out.println("After \"changeArrayElement\" method value " + someStrings[99]);
 		long endTime = System.currentTimeMillis();
 		System.out.println("Completed method in " + (endTime - startTime) + " milliseconds");
 	}

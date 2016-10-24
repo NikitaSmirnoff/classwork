@@ -12,6 +12,11 @@ public class ArrayMethods {
 			System.out.println("The number you are searching for is greater than or equal to the value in the middle of the array");
 		}
 	}
+	private static void cycleOnce(int[] array) {
+		for(int i = (array.length - 1); i > 0; i--){
+			swap(array, 0, i);
+		}
+	}
 	private static void shuffle(int[] arr) {
 		for(int i = 0; i < arr.length; i++){
 			int random = (int)(Math.random() * arr.length);

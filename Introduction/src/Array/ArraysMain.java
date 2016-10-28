@@ -5,30 +5,47 @@ public class ArraysMain {
 	public static void main(String[] args) {
 		long startTime = System.currentTimeMillis();
 		
-		int[] array = new int[50];
+		testPrimes(100000);
 		
-		ArrayExercise.listDeck();
-		ArrayExercise.print(array);
-//		
-//		SampleElement sample = new SampleElement(10);
-//		sample.increase();
-//		System.out.println("The sample element has a number equal to " + sample.getNumber());
-//		
-//		String[] someStrings = new String[100];
-//		populateArray(someStrings);
-//		
-//		//in this method we pass the ELEMENT (a var), not the array, so no change will be made.
-//		System.out.println("Before " + someStrings[99]);
-//		changeString(someStrings[99]);
-//		System.out.println("After \"changeString\" method value " + someStrings[99]);
-//		changeArray(someStrings);
-//		System.out.println("After \"changeArray\" method value " + someStrings[99]);
-//		changeArrayElement(someStrings, 99);
-//		System.out.println("After \"changeArrayElement\" method value " + someStrings[99]);
 		long endTime = System.currentTimeMillis();
 		System.out.println("Completed method in " + (endTime - startTime) + " milliseconds");
 	}
-
+	private static void testPrimes(int numberToTest){
+		int lastToCheck = (int)(Math.sqrt(numberToTest));
+		boolean[] theNumbers = new boolean[numberToTest];
+		for(int i = 0; i < numberToTest; i++){
+			theNumbers[i] = true;
+		}
+		theNumbers[0] = false;
+		theNumbers[1] = false;
+		for(int prime = 2; prime <= lastToCheck; prime++){
+			//When checking 50 numbers,
+			//tests 2,3,4,5,6,7 as if prime
+			if(theNumbers[prime]){
+				//only checks numbers that are prime
+				//(numbers that haven't been crossed off)
+				//wont check 4 and 6 (crossed off by 2)
+				System.out.println("\n" + prime + " is prime. Crossing off:");
+				boolean first = true;
+				for(int test = prime + prime; test < numberToTest; test = test + prime){
+					if(!first){
+						System.out.print(test + ", ");
+						theNumbers[test] = false;
+					}else{
+						first = false;
+					}
+				}
+			}
+		}
+		for(int i = 0; i < theNumbers.length; i++){
+			if(theNumbers[i]){
+				System.out.println(i + " is prime.");
+			}
+			else{
+				System.out.println(i + " is not prime.");
+			}
+		}
+	}
 	private static void changeArrayElement(String[] someStrings, int i) {
 		someStrings[i] = "new item " + (i + 1);
 	}
